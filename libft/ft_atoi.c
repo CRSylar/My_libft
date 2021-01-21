@@ -35,7 +35,7 @@ int		ft_atoi(const char *nptr)
 	}
 	if ((out == 2147483648 && neg == -1) || (out < 2147483648))
 		return (out * neg);
-	if (neg == 1)
+	if (neg == 1 && out != 0)
 		return (-1);
 	return (0);
 }

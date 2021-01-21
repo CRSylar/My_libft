@@ -32,7 +32,7 @@ char		*ft_itoa(int n)
 	}
 	else
 		ncpy = n;
-	if ((out = (char*)malloc(len + 1)) == 0)
+	if ((out = (char*)ft_calloc(len + 1, sizeof(char))) == 0)
 		return (0);
 	out[len] = 0;
 	if (n < 0)

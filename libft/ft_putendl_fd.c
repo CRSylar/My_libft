@@ -6,7 +6,7 @@
 /*   By: cromalde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:09:36 by cromalde          #+#    #+#             */
-/*   Updated: 2021/01/11 15:31:14 by cromalde         ###   ########.fr       */
+/*   Updated: 2021/01/19 14:03:10 by cromalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	ft_putstr_fd(s, fd);
+	ft_putstr_fd(s, -1, fd);
 	ft_putchar_fd('\n', fd);
 }

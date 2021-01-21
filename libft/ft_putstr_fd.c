@@ -6,25 +6,35 @@
 /*   By: cromalde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/11 14:09:36 by cromalde          #+#    #+#             */
-/*   Updated: 2021/01/13 18:12:27 by cromalde         ###   ########.fr       */
+/*   Updated: 2021/01/19 14:03:34 by cromalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int len, int fd)
 {
 	int i;
 
 	i = 0;
-	if (!s)
+	if (!s || !len)
+		return (i);
+	if (len < 0)
 	{
-		(void)fd;
-		return ;
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
 	}
-	while (s[i])
+	else
 	{
-		write(fd, &s[i], 1);
-		i++;
+		while ((len > 0) && s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+			len--;
+		}
 	}
+	return (i);
 }

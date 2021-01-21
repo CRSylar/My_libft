@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putFD.c                                         :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cromalde <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/11 14:09:36 by cromalde          #+#    #+#             */
-/*   Updated: 2021/01/11 14:09:56 by cromalde         ###   ########.fr       */
+/*   Created: 2021/01/19 14:02:09 by cromalde          #+#    #+#             */
+/*   Updated: 2021/01/19 14:02:37 by cromalde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_putchar_fd(char c, int fd)
+int		ft_intlen(int n)
 {
-	write(fd, &c, 1);
-	return (1);
+	int ret;
+
+	ret = 0;
+	if (!n)
+		return (1);
+	while (n)
+	{
+		(n / 10) ? ret++ : ret++;
+		n /= 10;
+	}
+	return (ret);
 }
